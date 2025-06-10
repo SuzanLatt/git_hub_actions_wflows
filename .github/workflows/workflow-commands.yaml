@@ -13,3 +13,15 @@ jobs:
                 echo ":: notice:: This is a notice message"
                 echo ":: debug:: This is a debug message"
                 echo ":: error title:: File with error title text"
+            - name: Group of logs
+              run: |
+                echo ":: group:: Group of logs"
+                echo " This is inside a group of logs"
+                echo " ::endgroup::"
+            - name: Masking a value
+              run: "::add-mask::This is a secret value"
+            - name: Echo a secret value
+              run: echo "Secret value is ${{secrets.SECRET_VALUE}}"
+            - name: Set output
+              id: set-output
+              run: echo "::set-output name=output::This is the output value"    
