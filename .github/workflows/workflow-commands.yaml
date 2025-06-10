@@ -19,7 +19,7 @@ jobs:
                 echo " This is inside a group of logs"
                 echo " ::endgroup::"
             - name: Masking a value
-              run: "::add-mask::This is a secret value"
+              run: echo "::add-mask::This is a secret value"
             - name: Echo a secret value
               run: echo "Secret value is ${{secrets.SECRET_VALUE}}"
             - name: Set output
