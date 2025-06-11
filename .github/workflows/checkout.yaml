@@ -18,3 +18,6 @@ jobs:
                 git init
                 git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
                 git fetch origin
+                git checkout main
+            - name: List Files
+              run: ls -a
