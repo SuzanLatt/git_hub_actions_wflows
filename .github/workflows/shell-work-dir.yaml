@@ -1,0 +1,25 @@
+name: Working Directory
+on: [push]
+
+jobs:
+    shell-work-dir:
+        runs-on: macos-latest
+        steps:
+            - name: Creating Working Directory
+              run: |
+                pwd
+                ls -a
+                echo $GITHUB_SHA_WORKSPACE
+                echo $GITHUB_WORKSPACE
+                echo $GITHUB_REPOSITORY
+    display-wd-info-working-dir:
+        runs-on: windows-latest
+        needs: shell-work-dir
+        steps:
+            - name: Display Working Directory Info
+              run: |
+                pwd
+                ls -a
+                echo $GITHUB_SHA_WORKSPACE
+                echo $GITHUB_WORKSPACE
+                echo $GITHUB_REPOSITORY            
