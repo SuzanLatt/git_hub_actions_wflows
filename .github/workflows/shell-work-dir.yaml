@@ -1,6 +1,8 @@
 name: Working Directory
 on: [push]
-
+defaults:
+    run:
+      shell: bash
 jobs:
     shell-work-dir:
         runs-on: macos-latest
@@ -14,6 +16,9 @@ jobs:
                 echo $GITHUB_REPOSITORY
     display-wd-info-working-dir:
         runs-on: windows-latest
+        defaults:
+            run:
+              shell: pwsh
         needs: shell-work-dir
         steps:
             - name: Display Working Directory Info
